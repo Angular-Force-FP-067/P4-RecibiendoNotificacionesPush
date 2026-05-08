@@ -5,24 +5,28 @@ import { NgIf } from '@angular/common';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LandingBannerComponent } from './shared/landing-banner/landing-banner.component';
+import { MessagingService } from './services/messaging.service';
 
 @Component({
-    standalone: true,
-    selector: 'app-root',
-    imports: [
-      RouterOutlet,
-      NgIf,
-      HeaderComponent,
-      FooterComponent,
-      LandingBannerComponent
-    ],
-    templateUrl: './app.html',
-    styleUrls: ['./app.css']
-  })
-  export class AppComponent {
+  standalone: true,
+  selector: 'app-root',
+  imports: [
+    RouterOutlet,
+    NgIf,
+    HeaderComponent,
+    FooterComponent,
+    LandingBannerComponent
+  ],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
+})
+export class AppComponent {
   isLanding = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private messagingService: MessagingService
+  ) {
     this.updateLayout(this.router.url);
 
     this.router.events
@@ -30,6 +34,9 @@ import { LandingBannerComponent } from './shared/landing-banner/landing-banner.c
       .subscribe((event: NavigationEnd) => {
         this.updateLayout(event.urlAfterRedirects);
       });
+
+    this.messagingService.requestPermission();
+    this.messagingService.listenMessages();
   }
 
   private updateLayout(url: string): void {
