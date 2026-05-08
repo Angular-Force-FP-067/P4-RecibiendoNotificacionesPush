@@ -1,0 +1,135 @@
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    gap: 10,
+  },
+  header: {
+    gap: 4,
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#111',
+  },
+  subtitle: {
+    fontSize: 12,
+    color: '#666',
+  },
+  videoFrame: {
+    position: 'relative',
+    width: '100%',
+    height: 200,
+    borderRadius: 10,
+    overflow: 'hidden',
+    backgroundColor: '#000',
+  },
+  video: {
+    width: '100%',
+    height: '100%',
+  },
+  loadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    gap: 6,
+  },
+  loadingText: {
+    fontSize: 12,
+    color: '#fff',
+    fontWeight: '600',
+  },
+  controls: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#eee',
+    padding: 12,
+    gap: 10,
+  },
+  progressRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  progressTrack: {
+    flex: 1,
+    height: 4,
+    borderRadius: 3,
+    backgroundColor: '#e1e1e1',
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#FF4400',
+  },
+  timeText: {
+    fontSize: 11,
+    color: '#666',
+    width: 38,
+    textAlign: 'center',
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  mainButton: {
+    flex: 1,
+    backgroundColor: '#FF4400',
+    paddingVertical: 9,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  mainButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+  },
+  smallButton: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: '#e6e6e6',
+  },
+  secondaryButton: {
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    paddingVertical: 7,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#e6e6e6',
+  },
+  buttonText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#444',
+  },
+  placeholderBox: {
+    width: '100%',
+    minHeight: 160,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#f7f7f7',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    gap: 8,
+  },
+  placeholderTitle: {
+    color: '#333',
+    fontSize: 15,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  placeholderText: {
+    color: '#666',
+    fontSize: 12,
+    textAlign: 'center',
+    lineHeight: 18,
+  },
+});

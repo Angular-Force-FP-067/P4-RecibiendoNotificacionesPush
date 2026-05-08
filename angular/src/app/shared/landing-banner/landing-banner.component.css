@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.landing-banner {
+  width: 100%;
+  min-height: 420px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("/media/landing/hands-holding-basketball-side-view.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.landing-banner__overlay {
+  width: 100%;
+}
+
+.landing-banner__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.landing-banner__content h1 {
+  margin: 0 0 6px;
+  font-size: 3.2rem;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.landing-banner__content h2 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: #ff7a3c;
+  font-weight: 700;
+}
+
+.landing-banner__text {
+  max-width: 620px;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  opacity: 0.95;
+}
+
+@media (max-width: 992px) {
+  .landing-banner {
+    min-height: 360px;
+  }
+
+  .landing-banner__content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing-banner {
+    min-height: 280px;
+  }
+
+  .landing-banner__content {
+    padding: 0 16px;
+  }
+
+  .landing-banner__content h1 {
+    font-size: 2rem;
+  }
+
+  .landing-banner__content h2 {
+    font-size: 1.2rem;
+  }
+}

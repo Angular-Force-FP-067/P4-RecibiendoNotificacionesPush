@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Equipo-Basket",
+    "slug": "equipo-basket",
+    "owner": "angular-force-or-fp067",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-dev-client",
+      "@react-native-firebase/app"
+    ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.equipobasket",
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "44cc361a-654f-4390-9bb8-60dd4aa1c4e1"
+      }
+    }
+  }
+}

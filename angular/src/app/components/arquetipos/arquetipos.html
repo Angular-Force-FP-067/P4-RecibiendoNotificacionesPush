@@ -1,0 +1,78 @@
+<section class="arquetipos">
+<!-- Titutlo + Subtiutlo-->
+<header class="arquetipos_header">
+  <h2>Arquetipos de Usuarios</h2>
+  <h4>Perfiles de los principales usuarios de la aplicación EQUIPO BASKET</h4>
+</header>
+
+<!-- Pestañas -->
+<div class="tabs">
+  <button
+    [class.activa]="tabActiva === 'entrenador'"
+    (click)="tabActiva = 'entrenador'">
+    Entrenadores
+  </button>
+  <button
+    [class.activa]="tabActiva === 'jugador'"
+    (click)="tabActiva = 'jugador'">
+    Jugadores
+  </button>
+  <button
+    [class.activa]="tabActiva === 'aficionado'"
+    (click)="tabActiva = 'aficionado'">
+    Aficionados
+  </button>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenido">
+  <div *ngFor="let a of arquetiposFiltrados" class="card">
+
+    <!-- HEADER -->
+    <div class="card-header">
+      <div class="avatar"></div>
+      <div class="info">
+        <h3>{{a.nombre}} {{a.apellidos}}</h3>
+        <span>Edad: {{a.edad}} || {{a.lateMotiv}}</span>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="card-body">
+
+      <p>{{a.biografia}}</p>
+
+      <div class="grid">
+        <div class="box objetivos">
+          <strong>Objetivos</strong>
+          <ul>
+            <li *ngFor="let o of a.objetivos">{{o}}</li>
+          </ul>
+        </div>
+
+        <div class="box frustraciones">
+          <strong>Frustraciones</strong>
+          <ul>
+            <li *ngFor="let f of a.frustraciones">{{f}}</li>
+          </ul>
+        </div>
+
+        <div class="box comportamiento">
+          <strong>Comportamiento</strong>
+          <ul>
+            <li *ngFor="let c of a.comportamiento">{{c}}</li>
+          </ul>
+        </div>
+      
+      <div class="box uso-tecnologia">
+          <strong>Uso de tecnología</strong>
+          <ul>
+            <li *ngFor="let t of a.usoTecnologia">{{t}}</li>
+          </ul>
+        </div> 
+      </div>    
+
+    </div> <!-- end card-body -->
+
+  </div> <!-- end card -->
+</div> <!-- end contenido -->

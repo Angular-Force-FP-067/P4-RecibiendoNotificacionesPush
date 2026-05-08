@@ -1,0 +1,437 @@
+/** Estilos para el componente PlayersComponent **/
+.players {
+  padding: 1rem;
+}
+
+/* Estilos para el encabezado del componente */
+.players_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Caja de filtros */
+.players_box {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Contenedor de filtros */
+.players_filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.players_filters input, .players_filters select, .search-input input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #E9E9E9;
+  background-color: #E9E9E9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.players_filters input:focus, .players_filters select:focus {
+  border-color: #FF4400;
+  box-shadow: 0 0 5px rgba(255,68,0,0.5);
+}
+
+.players_filters input::placeholder {
+  color: #999;
+}
+
+.players_filters input[type="text"], .players_filters select, .players_filters input[type="number"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+.players_filters input, .players_filters select, .search-input input {
+  height: 56px;
+}
+
+/* Contenedor del filtro buscar por nombre */
+.search-input {
+  position: relative;
+  flex: 1;
+}
+
+.search-input input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem 0.5rem 2.2rem;
+  border: 2px solid #E9E9E9;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: #999;
+  pointer-events: none;
+}
+
+/* Slider de edad */
+.age-slider {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #E9E9E9;
+  background-color: #E9E9E9;
+  border-radius: 6px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.age-slider label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #999;
+}
+
+.age-slider input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 20px;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.age-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF4400;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+.age-slider input[type="range"]::-webkit-slider-thumb:hover {
+  background: #2077F9;
+}
+
+.age-slider input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF4400;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Lista de jugadores */
+.players_list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.players_item {
+  list-style: none;
+  cursor: pointer;
+}
+
+.player-card {
+  background: white;
+  border-radius: 12px;
+  border: #999 solid 1px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.players_item.selected .player-card {
+  border: 2px solid #FF4400;
+}
+
+/* Imagen del jugador + Número Jersey */
+.player-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.player-img-wrapper {
+  position: relative;
+}
+
+.jersey-number {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #FF4400;
+  color: white;
+  padding: 0.35rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Nombre + Apellidos */
+.player-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-info {
+  padding: 1rem;
+}
+
+.player-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.player-info p {
+  margin: 0.5rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0.20rem;
+}
+
+/* Posición + Edad */
+.player-position {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.player-age {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Colores por posición */
+.pos-base { background-color: #2077F9; }
+.pos-escolta { background-color: #005D06; }
+.pos-alero { background-color: #F1ACFF; color: #222222; }
+.pos-ala-pivot { background-color: #FCFFAC; color: #222222; }
+.pos-pivot { background-color: #dc3545; }
+
+/* Separador */
+.divider {
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 0.75rem 0;
+}
+
+/* Estadísticas */
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.stat-number {
+  display: block;
+  font-weight: 700;
+  color: #FF4400;
+  font-size: 1.1rem;
+}
+
+.detail-container:not(:has(app-detail)) {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Solo aplicamos el margen cuando el contenedor SÍ tiene contenido */
+.detail-container:has(app-detail) {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem; /* Esto reemplaza al mt-4 de Bootstrap */
+}
+
+.expanded-detail {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.players_item.selected .player-card {
+  outline: 2px solid #198754;
+  border-radius: 12px;
+}
+
+.players_topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.players_topbar-left h2 {
+  margin-bottom: 0.25rem;
+}
+
+.players_topbar-left h4 {
+  margin: 0;
+}
+
+.players_topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.players-action-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.players-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.players-action-btn--primary {
+  background: #1e7a46;
+  color: white;
+  box-shadow: 0 6px 16px rgba(30, 122, 70, 0.22);
+}
+
+.players-action-btn--primary:hover {
+  opacity: 0.95;
+}
+
+.players-action-btn--secondary {
+  background: white;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.featured-detail {
+  margin-bottom: 2rem;
+}
+
+.featured-detail__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.players_item.selected .player-card {
+  outline: 2px solid #1e7a46;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .players_topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .players_topbar-right {
+    justify-content: flex-end;
+  }
+
+  .featured-detail__header {
+    justify-content: flex-start;
+  }
+}
+
+.players-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.players-action-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.players-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Botón principal */
+.players-action-btn--primary {
+  background: #1e7a46;
+  color: white;
+  box-shadow: 0 6px 16px rgba(30, 122, 70, 0.2);
+}
+
+/* Botón secundario */
+.players-action-btn--secondary {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .players-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .players-action-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

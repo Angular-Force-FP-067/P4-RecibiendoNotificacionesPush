@@ -1,0 +1,36 @@
+.footer {
+  margin-top: 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.footer-container {
+  width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-group {
+  font-weight: 600;
+  color: #222;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer p {
+  margin: 0;
+}

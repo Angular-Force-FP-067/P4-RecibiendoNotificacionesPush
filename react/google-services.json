@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704239206516",
+    "project_id": "equipo-basket-e20b9",
+    "storage_bucket": "equipo-basket-e20b9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704239206516:android:717541f2359961e0ab9121",
+        "android_client_info": {
+          "package_name": "com.equipobasket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcAmZsof8hxNs_gKm9YvLbgLZ-NfS3BnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

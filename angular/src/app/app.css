@@ -1,0 +1,13 @@
+.main {
+  padding: 20px 0;
+  min-height: calc(100vh - 60px - 56px);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
