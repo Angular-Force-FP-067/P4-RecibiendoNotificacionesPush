@@ -11,3 +11,8 @@
   padding: 24px;
   box-sizing: border-box;
 }
+
+.notifications-box {
+  margin: 1rem 0;
+  text-align: right;
+}

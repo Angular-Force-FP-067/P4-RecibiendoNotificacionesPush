@@ -35,8 +35,11 @@ export class AppComponent {
         this.updateLayout(event.urlAfterRedirects);
       });
 
-    this.messagingService.requestPermission();
     this.messagingService.listenMessages();
+  }
+
+  activarNotificaciones(): void {
+    this.messagingService.requestPermission();
   }
 
   private updateLayout(url: string): void {
