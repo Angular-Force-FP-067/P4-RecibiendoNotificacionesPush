@@ -1,32 +1,30 @@
-// ─── 1. Importar módulos ───────────────────────────────────────────────────
-const { onValueWritten, onValueUpdated } = require("firebase-functions/v2/database");
+// ─── 1. Importar módulos ───────────────────────────────────────────────
+const { onDocumentWritten, onDocumentUpdated } = require("firebase-functions/v2/firestore");
 const { initializeApp } = require("firebase-admin/app");
 const { getMessaging } = require("firebase-admin/messaging");
 
-// ─── 2. Inicializar Firebase Admin ────────────────────────────────────────
+// ─── 2. Inicializar Firebase Admin ────────────────────────────────────
 initializeApp();
 
-// ═══════════════════════════════════════════════════════════════════════════
-// TRIGGER 1: onWrite() — Se dispara al CREAR o MODIFICAR un registro
-// ═══════════════════════════════════════════════════════════════════════════
-exports.notificarEscritura = onValueWritten(
-  { ref: "/mensajes/{mensajeId}", region: "europe-west1" },
+// ═══════════════════════════════════════════════════════════════════════
+// TRIGGER 1: onWrite() — Se dispara al CREAR o MODIFICAR un documento
+// ═══════════════════════════════════════════════════════════════════════
+exports.notificarEscritura = onDocumentWritten(
+  "players/{playerId}",
   async (event) => {
 
-    // Si el nodo fue eliminado, no hacemos nada
-    if (!event.data.after.exists()) {
-      console.log("Nodo eliminado, sin notificación.");
+    if (!event.data.after.exists) {
+      console.log("Documento eliminado, sin notificación.");
       return null;
     }
 
-    const nuevosDatos = event.data.after.val();
+    const nuevosDatos = event.data.after.data();
     console.log("onWrite disparado con datos:", nuevosDatos);
 
-    // Construir notificación dirigida al topic general
     const mensaje = {
       notification: {
-        title: "¡Nueva entrada en Equipo Basket!",
-        body: `Registro creado o modificado: ${nuevosDatos.texto || JSON.stringify(nuevosDatos)}`,
+        title: "¡Nuevo jugador en Equipo Basket!",
+        body: `Creado o modificado: ${nuevosDatos.nombre} ${nuevosDatos.apellidos}`,
       },
       topic: "general",
     };
@@ -42,23 +40,23 @@ exports.notificarEscritura = onValueWritten(
   }
 );
 
-// ═══════════════════════════════════════════════════════════════════════════
-// TRIGGER 2: onUpdate() — Se dispara SOLO al MODIFICAR (no al crear)
-// ═══════════════════════════════════════════════════════════════════════════
-exports.notificarActualizacion = onValueUpdated(
-  { ref: "/mensajes/{mensajeId}", region: "europe-west1" },
+// ═══════════════════════════════════════════════════════════════════════
+// TRIGGER 2: onUpdate() — Se dispara SOLO al MODIFICAR
+// ═══════════════════════════════════════════════════════════════════════
+exports.notificarActualizacion = onDocumentUpdated(
+  "players/{playerId}",
   async (event) => {
 
-    const datosPrevios = event.data.before.val();
-    const datosNuevos = event.data.after.val();
+    const datosPrevios = event.data.before.data();
+    const datosNuevos = event.data.after.data();
 
     console.log("onUpdate — antes:", datosPrevios);
     console.log("onUpdate — después:", datosNuevos);
 
     const mensaje = {
       notification: {
-        title: "Registro actualizado en Equipo Basket",
-        body: `Cambio detectado: ${datosNuevos.texto || JSON.stringify(datosNuevos)}`,
+        title: "Jugador actualizado en Equipo Basket",
+        body: `Cambio detectado: ${datosNuevos.nombre} ${datosNuevos.apellidos}`,
       },
       topic: "general",
     };
