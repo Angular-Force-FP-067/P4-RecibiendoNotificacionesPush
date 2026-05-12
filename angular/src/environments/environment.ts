@@ -8,5 +8,6 @@ export const environment = {
   storageBucket: "equipo-basket-e20b9.firebasestorage.app",
   messagingSenderId: "704239206516",
   appId: "1:704239206516:web:1a4d79a7f147795dab9121"
-  }
+  },
+  vapidKey: "BC7a_Ln5EIXP9Y8YtfaS0P8TyuVVCCAWBoJvBrjt7sP2uM1BVoXU7YZWGhl2SUZtuO64olkQca5cCuYWXvljuNE"
 };

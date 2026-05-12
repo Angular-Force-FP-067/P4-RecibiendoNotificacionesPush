@@ -3,6 +3,11 @@
 <app-landing-banner *ngIf="isLanding"></app-landing-banner>
 
 <main class="container main">
+  <section class="notifications-box">
+    <button type="button" class="btn btn-primary" (click)="activarNotificaciones()">
+      Activar notificaciones
+    </button>
+  </section>
   <router-outlet></router-outlet>
 </main>
 
