@@ -1,0 +1,9 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by akka.util.Unsafe (file:/C:/Users/RYZEN/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar)
+WARNING: Please consider reporting this to the maintainers of class akka.util.Unsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+17:32:08.749 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+17:32:08.975 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+17:32:12.604 [NamespaceSystem-akka.actor.default-dispatcher-7] INFO com.firebase.core.namespace.NamespaceActor - equipo-basket-e20b9 successfully activated FBKV (SurveyIdle(0)) wait: 162ms, init: 0ms
+17:32:12.604 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - equipo-basket-e20b9-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 162ms, init: 0ms
+17:32:15.023 [NamespaceSystem-blocking-namespace-operation-dispatcher-12] INFO com.firebase.core.namespace.StateManager - Namespace equipo-basket-e20b9-default-rtdb status Active to Active

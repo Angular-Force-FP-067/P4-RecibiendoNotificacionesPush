@@ -1,0 +1,10 @@
+{
+  "players": {
+    "jugador1": {
+      "nombre": "Precious",
+      "apellidos": "Achiuwa",
+      "edad": 26,
+      "altura": 203
+    }
+  }
+}
