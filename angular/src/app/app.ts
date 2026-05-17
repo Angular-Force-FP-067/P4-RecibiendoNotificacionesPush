@@ -6,6 +6,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LandingBannerComponent } from './shared/landing-banner/landing-banner.component';
 import { MessagingService } from './services/messaging.service';
+import { NotificationListenerService } from './services/notification-listener.service';
 
 @Component({
   standalone: true,
@@ -25,7 +26,8 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
+    private notificationListenerService: NotificationListenerService
   ) {
     this.updateLayout(this.router.url);
 
@@ -36,6 +38,8 @@ export class AppComponent {
       });
 
     this.messagingService.listenMessages();
+
+    this.notificationListenerService.escucharNotificaciones();
   }
 
   activarNotificaciones(): void {
